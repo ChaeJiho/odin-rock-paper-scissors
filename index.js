@@ -1,6 +1,7 @@
-// Create a prompt requiring user input of either rock, paper, or scissors
+
 // Make a function called getComputerChoice that randomly selects one of the three options
-// Make function 'playRound()' that prompts user to choose rock, paper, or scissors and 
+// Make function 'playRound()' that returns response upon user input.
+// Create function that keeps score of user and computer.
 
 function getComputerChoice() {
     const getNumber = Math.floor(Math.random() * 3) + 1;
@@ -12,33 +13,54 @@ function getComputerChoice() {
     } else {
         return "scissors";
     }
-
 }
 
-prompt("Let's play rock, paper, scissors!");
+let userScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock' && computerSelection == "rock") {
-        return 'I chose rock. Draw!';
+        alert('I chose rock. Draw!');
     } else if (playerSelection == 'rock' && computerSelection == 'paper') {
-        return 'I chose paper. You lose!';
+        alert('I chose paper. You lose!');
+        computerScore++;
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
-        return 'I chose scissors. You win!';
+        alert('I chose scissors. You win!');
+        userScore++;
     } else if (playerSelection == 'paper' && computerSelection == 'rock') {
-        return 'I chose rock. You win!';
+        alert('I chose rock. You win!');
+        userScore++;
     } else if (playerSelection == 'paper' && computerSelection == 'paper') {
-        return 'I chose paper. Draw!';
+        alert('I chose paper. Draw!');
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        return 'I chose scissors. You win!';
+        alert('I chose scissors. You lose!');
+        computerScore++;
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        return 'I chose rock. You lose!';
+        alert('I chose rock. You lose!');
+        computerScore++;
     } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
-        return 'I chose paper. You win!';
+        alert('I chose paper. You win!');
+        userScore++;
     } else if (playerSelection == 'scissors' && computerSelection == 'scissors') {
-        return 'I chose scissors. Draw!';
+        alert('I chose scissors. Draw!');
+    } else {
+        alert('Invalid input. Choose either rock, paper, or scissors.');
     }
 }
 
-const computerSelection = getComputerChoice();
+const game = () => {
+    for (let i = 1; i <= 5; i++) {
+        const computerSelection = getComputerChoice();
+        const playerSelection = prompt("Let's play rock, paper, scissors!").toLowerCase();
+        playRound(playerSelection, computerSelection);
+    }
 
-console.log(playRound('rock', computerSelection));
+    if (userScore > computerScore) {
+        alert('You win the game!');
+    } else if (userScore < computerScore) {
+        alert('You lost. Better luck next time!');
+    } else {
+        alert("It's a tie!");
+    }
+}
+console.log(game());
