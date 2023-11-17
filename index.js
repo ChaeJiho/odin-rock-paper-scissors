@@ -3,7 +3,7 @@
 // Make function 'playRound()' that returns response upon user input.
 // Create function that keeps score of user and computer.
 
-function getComputerChoice() {
+/*function getComputerChoice() {
     const getNumber = Math.floor(Math.random() * 3) + 1;
     
     if (getNumber == 1) {
@@ -63,4 +63,5 @@ const game = () => {
         alert("It's a tie!");
     }
 }
+
 console.log(game());
