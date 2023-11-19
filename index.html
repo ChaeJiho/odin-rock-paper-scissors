@@ -6,24 +6,30 @@
         <title>Rock Paper Scissors</title>
         <link rel="stylesheet" href="rps.css">
     </head>
-    <script src="index.js"></script>
     <body>
         <div class = "header">
 
         </div>
-        <div class = "results">
-            <h1>placeholder text</h1>
+        <div class="gameDiv" id="gameDiv">
+            <div class="player">
+                <h1 id="playerText">Player: </h1>
+            </div>
+            <div class="computer">
+                <h1 id="computerText">Computer: </h1>
+            </div>
+            <div class="buttons">
+                <button class="choiceBtn">Rock</button>
+                <button class="choiceBtn">Paper</button>
+                <button class="choiceBtn">Scissors</button>
+            </div>
+            <div class="score">
+                <h2>Score</h2>
+                <div>
+                    <h2 id="userScore">Player:</h2>
+                    <h2 id="computerScore">Computer:</h2>
+                </div>
+            </div>
         </div>
-        <div class = "buttons">
-            <div>
-                <button class="choiceBtn">rock</button>
-            </div>
-            <div>
-                <button class="choiceBtn">paper</button>
-            </div>
-            <div>
-                <button class="choiceBtn">scissors</button>
-            </div>
-        </div>
+        <script src="index.js"></script>
     </body>
 </html>
