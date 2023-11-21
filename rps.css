@@ -1,23 +1,65 @@
 body {
     margin: 0;
+    background-image: url(https://images4.newscred.com/Zz1kNmFkYmFmNzhlNGIxMWViYTU1ZDFmYjg0ZWI5MTc4Zg==);
+}
+
+.header {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
 }
 
 .gameDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*background-color: black;*/
-    padding: 29em;
+    background: rgb(245,83,195);
+    background: linear-gradient(56deg, rgba(245,83,195,1) 8%, rgba(2,208,250,1) 65%);
+    padding-top: 9em;
+    padding-bottom: 9em;
+    margin-left: 25em;
+    margin-right: 25em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 2em;
+    flex-wrap: wrap;
 }
 
 .buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 3em;
+    flex-wrap: wrap;
 }
 
-.score {
+.choiceBtn {
+    padding: 2em;
+    border-radius: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    border: none;
+}
+
+.choiceBtn:hover {
+    cursor: pointer;
+    background-color: #bfb9b8;
+    transition: 0.3s;
+}
+
+.choiceBtn:active {
+    background-color:white;
+}
+
+.results {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+.playerComputer {
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
 }
