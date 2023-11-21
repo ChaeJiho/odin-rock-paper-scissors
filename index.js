@@ -6,19 +6,24 @@
 const playerText = document.querySelector("#playerText");
 const computerText = document.querySelector("#computerText");
 const choiceBtns = document.querySelectorAll(".choiceBtn");
-const scoreText = document.querySelector("#scoreText");
+const scoreTextPlayer = document.querySelector("#scoreTextPlayer");
+const scoreTextComputer = document.querySelector("#scoreTextComputer");
 
 
 
 let player;
 let computer;
 let result;
+let userScore = 0;
+let computerScore = 0;
 
 choiceBtns.forEach(button => button.addEventListener("click", () => {
     player = button.textContent;
     computer = getComputerChoice();
     playerText.textContent = `Player: ${player}`;
     computerText.textContent = `Computer: ${playRound()}`;
+    scoreTextPlayer.textContent = `Player: ${userScore}`;
+    scoreTextComputer.textContent = `Computer: ${computerScore}`;
 }))
 
 function getComputerChoice() {
@@ -33,8 +38,6 @@ function getComputerChoice() {
     }
 }
 
-let userScore = 0;
-let computerScore = 0;
 
 function playRound() {
     if (player == 'Rock' && computer == "rock") {
@@ -68,8 +71,7 @@ function playRound() {
 
 const game = () => {
     for (let i = 1; i <= 5; i++) {
-        const computer = getComputerChoice();
-        const player = button.textContent;
+        getComputerChoice();
         playRound();
     }
 
